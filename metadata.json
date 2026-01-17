@@ -1,0 +1,8 @@
+{
+  "name": "OmniBot SaaS - Multi-Tenant AI Chatbot Platform",
+  "description": "A production-grade, generic AI chatbot system featuring multi-tenancy, RAG (Retrieval-Augmented Generation), self-serve onboarding, and a plug-and-play embeddable widget.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
