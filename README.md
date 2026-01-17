@@ -1,47 +1,53 @@
-💬 OmniBot Frontend – Embeddable AI Chat Widget & Admin Console
+# 💬 OmniBot Frontend – Embeddable AI Chat Widget & Admin Console
 
-OmniBot Frontend is a modern, framework-agnostic AI chatbot interface and admin management console built with Angular.
-It allows businesses to embed an AI chatbot into any website and manage company data, knowledge base, and appearance without writing backend code.
+OmniBot Frontend is a **modern, framework-agnostic AI chatbot interface** and **admin management console** built with **Angular**.
 
-This frontend works with the OmniBot Backend API and supports multi-tenant isolation, RAG-based chat, and plug-and-play integration.
+It allows businesses to **embed an AI chatbot into any website** and manage **company data, knowledge base, and appearance** without writing backend code.
 
-🚀 Features
-Chat Widget
+This frontend works with the **OmniBot Backend API** and supports **multi-tenant isolation**, **RAG-based chat**, and **plug-and-play integration**.
 
-✅ Floating chat bubble UI
+---
 
-✅ Mobile & desktop responsive
+## 🚀 Features
 
-✅ Markdown-rendered AI responses
+### 💬 Chat Widget
 
-✅ Conversation memory (per session)
+- ✅ Floating chat bubble UI
+- ✅ Mobile & desktop responsive
+- ✅ Markdown-rendered AI responses
+- ✅ Conversation memory (per session)
+- ✅ Tenant-level theming (color, logo, greeting)
+- ✅ Zero business logic on frontend
 
-✅ Theming per tenant (color, logo, greeting)
+---
 
-✅ Zero business logic on frontend
+### 🧑‍💼 Admin Panel
 
-Admin Panel
+- ✅ Create & manage tenants (companies)
+- ✅ Upload and manage knowledge base documents
+- ✅ Edit system instructions (AI persona)
+- ✅ Generate embeddable widget code
+- ✅ Live preview of chatbot behavior
 
-✅ Create & manage tenants (companies)
+---
 
-✅ Upload and manage knowledge base documents
+## 🧱 Tech Stack
 
-✅ Edit system instructions (AI persona)
+| Layer        | Technology                          |
+|--------------|-------------------------------------|
+| Framework    | Angular (standalone components)     |
+| Language     | TypeScript                          |
+| Styling      | Tailwind CSS                        |
+| HTTP         | Angular HttpClient                 |
+| State        | Angular Signals                    |
+| Rendering    | Markdown (`marked`)                |
+| Integration | REST APIs                          |
 
-✅ Generate embed code
+---
 
-✅ Live preview of chatbot behavior
+## 📁 Project Structure
 
-🧱 Tech Stack
-Layer	Technology
-Framework	Angular (standalone components)
-Language	TypeScript
-Styling	Tailwind CSS
-HTTP	Angular HttpClient
-State	Angular Signals
-Rendering	Markdown (marked)
-Integration	REST APIs
-📁 Project Structure
+```txt
 src/
 ├── app.component.ts            # Root app
 ├── index.tsx                   # Bootstrap entry
@@ -55,18 +61,13 @@ src/
 │   └── types.ts
 └── styles/
     └── tailwind.css
-
 🔌 Backend Dependency
-
 The frontend does NOT connect to MongoDB directly.
 
 It communicates only with the backend API:
 
 http://localhost:4000
-
-
-Required backend endpoints:
-
+Required Backend Endpoints
 /chat/message
 
 /api/tenants
@@ -77,18 +78,13 @@ Required backend endpoints:
 
 ⚙️ Configuration
 API Base URL
-
-In tenant.service.ts:
+tenant.service.ts
 
 private apiBase = 'http://localhost:4000/api';
-
-
-In ai.service.ts:
+ai.service.ts
 
 private API_URL = 'http://localhost:4000/chat/message';
-
 🧠 Chat Flow (Frontend Perspective)
-
 User types a message
 
 Widget sends:
@@ -119,10 +115,7 @@ Generated Embed Code
   };
 </script>
 <script src="https://cdn.omnibot.ai/widget.js"></script>
-
-
-✔ Works with:
-
+✔ Works With
 Angular
 
 React
@@ -136,7 +129,6 @@ Static HTML
 Any CMS
 
 🎨 Chat Widget UI Features
-
 Floating bubble with animation
 
 Typing indicator
@@ -157,7 +149,6 @@ Line breaks
 
 🧑‍💼 Admin Panel Capabilities
 Tenant Management
-
 Create new company workspace
 
 Switch active tenant
@@ -173,8 +164,7 @@ Greeting
 System instruction
 
 Knowledge Base
-
-Add documents (text / FAQ)
+Add documents (Text / FAQ)
 
 View token size
 
@@ -183,58 +173,12 @@ Delete documents
 Tenant-isolated data
 
 🔐 Security & Isolation
-
-🔐 No API keys exposed
+🔐 No API keys exposed in frontend
 
 🔐 Tenant ID controlled by backend
 
-🔐 No direct DB access
+🔐 No direct database access
 
 🔐 No AI logic on frontend
 
 🔐 Fully backend-driven authorization
-
-🧪 Testing Scenarios
-RAG Validation
-
-Ask:
-
-“What is the Premium plan price?”
-
-✔ Answer must come from uploaded knowledge
-
-Isolation Test (Critical)
-
-Switch tenant → ask unrelated question
-
-✔ Expected:
-
-I’m sorry, I don’t have information on that.
-
-🧑‍💻 Local Development
-npm install
-npm start
-
-
-Frontend runs at:
-
-http://localhost:3000
-
-
-Backend must be running for chat & admin panel to work.
-
-📈 Future Enhancements
-
-Auth-protected admin panel
-
-File upload (PDF, DOCX)
-
-Usage analytics dashboard
-
-Streaming chat responses
-
-Multi-language UI
-
-Dark mode support
-
-
